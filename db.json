@@ -1,0 +1,57 @@
+{
+  "posts": [
+    { "config":[
+            {
+              "ENABLED" : "true",
+              "MODE" : "local",
+              "TEST_RUN_NO" : "111111",
+              "BACKUP_PATH" : "sub_warm:/mnt/warm,sub_cold:/mnt/cold",
+              "CONTROLLER" : "/home/netstorm/NC_MON",
+              "CLEANUP": [
+                            { "name" : "raw_data",  "time" : "3d,5d,4w" },
+                            { "name" : "csv", "time": "3d,n,4w"},
+                            { "name" : "logs", "time": "13d,15d,4w"},
+                            { "name" : "db" , "time": "3d,5d,4w"},
+                            { "name" : "graphdata", "time": "3d,5d,4w"}
+                         ],
+              "CLEANUP_NEGATIVE_DAYS" : [
+                                           {"name":"raw_data","time":"2018/2/15,2018/6/5"},
+                                           {"name":"csv","time":"2018/2/15,2018/6/5"},
+                                           {"name":"logs","time":"2018/2/15,2018/6/5"},
+                                           {"name":"db","time":"2018/2/15,2018/6/5"},
+                                           {"name":"graphdata","time":"2018/2/15,2018/6/5"}
+                                        ]
+            },
+            {
+               "ENABLED" : "false",
+               "MODE" : "cloud",
+               "TEST_RUN_NO" : "222222",
+               "BACKUP_PATH": "/tmp/",
+               "CONTROLLER" : "/home/netstorm/NC_MON",
+               "CLEANUP" : [
+                                 { "name" : "raw_data",  "time" : "3d"},
+                                 { "name" : "csv", "time": "3d"},
+                                 { "name" : "logs", "time": "13d"},
+                                 { "name" : "db" , "time": "3d"},
+                                 { "name" : "graphdata", "time": "3d"}
+                           ],
+               "BACKUP":    [
+                                 { "name" : "raw_data",  "time" : "3d" },
+                                 { "name" : "csv", "time": "3d"},
+                                 { "name" : "logs", "time": "13d"},
+                                 { "name" : "db" , "time": "3d"},
+                                 { "name" : "graphdata", "time": "3d"}
+                           ],
+               "CLEANUP_NEGATIVE_DAYS" : [
+                                              {"name":"raw_data","time":"2018/2/15,2018/6/5,  2018/2/15,2018/6/5" },
+                                              {"name":"logs","time":"2018/2/15,2018/6/5" }
+                                         ]
+            }
+          ]
+} 
+
+  ],
+  "profile": {
+    "name": "arvind1228"
+  }
+}
