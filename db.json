@@ -1,5 +1,4 @@
-{
-  "posts": [
+
     { "config":[
             {
               "ENABLED" : "true",
@@ -50,8 +49,4 @@
           ]
 } 
 
-  ],
-  "profile": {
-    "name": "arvind1228"
-  }
-}
+
